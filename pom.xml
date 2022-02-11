@@ -8,9 +8,20 @@
     <artifactId>rutools-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0.1</version>
+    <name>rutools</name>
+    <description>华仔的工具类</description>
+    <url>https://github.com/rzh0001/rutools</url>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
     <modules>
         <module>rutools-core</module>
         <module>rutools-util</module>
+        <module>rutools-wallet</module>
     </modules>
 
     <properties>
@@ -26,7 +37,6 @@
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>actable</distribution>
         </license>
     </licenses>
 
@@ -45,6 +55,35 @@
         <connection>scm:git:git@github.com:rzh0001/rutools.git</connection>
         <developerConnection>scm:git:git@github.com:rzh0001/rutools.git</developerConnection>
     </scm>
+
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.15</version> <!-- apparently this needs to be exactly this version -->
+        </dependency>
+
+
+    </dependencies>
 
     <distributionManagement>
         <snapshotRepository>
@@ -67,10 +106,10 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.1.2</version>
+                        <version>3.2.1</version>
                         <executions>
                             <execution>
-                                <id>attach-sources</id>
+                                <id>sonatype-nexus-staging</id>
                                 <goals>
                                     <goal>jar-no-fork</goal>
                                 </goals>
@@ -83,41 +122,48 @@
                         <version>2.9.1</version>
                         <executions>
                             <execution>
-                                <id>attach-javadocs</id>
+                                <id>sonatype-nexus-staging</id>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
                             </execution>
                         </executions>
-                        <configuration>
-                            <aggregate>true</aggregate>
-                            <javadocExecutable>${JAVA_HOME}/bin/javadoc</javadocExecutable>
-                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>1.6</version>
                         <executions>
                             <execution>
-                                <id>ossrh</id>
+                                <id>sonatype-nexus-staging</id>
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <keyname>0x5BD64B7F</keyname>
+                                    <passphraseServerId>Qq187179524.</passphraseServerId>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>org.osnatype.plugins</groupId>
+                        <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>1.6.8</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>oss-release</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
+                            <serverId>sonatype-nexus-staging</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.thoughtworks.xstream</groupId>
+                                <artifactId>xstream</artifactId>
+                                <version>1.4.15</version> <!-- apparently this needs to be exactly this version -->
+                            </dependency>
+                        </dependencies>
                     </plugin>
                 </plugins>
             </build>
