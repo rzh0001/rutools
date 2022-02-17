@@ -18,6 +18,12 @@
             <artifactId>core</artifactId>
             <version>4.8.7</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.bitcoinj/bitcoinj-core -->
+        <dependency>
+            <groupId>org.bitcoinj</groupId>
+            <artifactId>bitcoinj-core</artifactId>
+            <version>0.16.1</version>
+        </dependency>
 
 
         <dependency>
@@ -35,21 +41,21 @@
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.44.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.tron.tronj</groupId>-->
-<!--            <artifactId>abi</artifactId>-->
-<!--            <version>0.1.2</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.tron.tronj</groupId>-->
-<!--            <artifactId>utils</artifactId>-->
-<!--            <version>0.1.2</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.tron.tronj</groupId>-->
-<!--            <artifactId>client</artifactId>-->
-<!--            <version>0.1.2</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.tron.tronj</groupId>-->
+        <!--            <artifactId>abi</artifactId>-->
+        <!--            <version>0.1.2</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.tron.tronj</groupId>-->
+        <!--            <artifactId>utils</artifactId>-->
+        <!--            <version>0.1.2</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.tron.tronj</groupId>-->
+        <!--            <artifactId>client</artifactId>-->
+        <!--            <version>0.1.2</version>-->
+        <!--        </dependency>-->
     </dependencies>
 
 </project>

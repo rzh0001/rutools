@@ -58,30 +58,37 @@
     </scm>
 
 
-
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--            <version>2.9.1</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-source-plugin</artifactId>-->
-<!--            <version>3.2.1</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-gpg-plugin</artifactId>-->
-<!--            <version>1.6</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.thoughtworks.xstream</groupId>-->
-<!--            <artifactId>xstream</artifactId>-->
-<!--            <version>1.4.15</version> &lt;!&ndash; apparently this needs to be exactly this version &ndash;&gt;-->
-<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.maven.plugins</groupId>-->
+        <!--            <artifactId>maven-javadoc-plugin</artifactId>-->
+        <!--            <version>2.9.1</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.maven.plugins</groupId>-->
+        <!--            <artifactId>maven-source-plugin</artifactId>-->
+        <!--            <version>3.2.1</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.maven.plugins</groupId>-->
+        <!--            <artifactId>maven-gpg-plugin</artifactId>-->
+        <!--            <version>1.6</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.thoughtworks.xstream</groupId>-->
+        <!--            <artifactId>xstream</artifactId>-->
+        <!--            <version>1.4.15</version> &lt;!&ndash; apparently this needs to be exactly this version &ndash;&gt;-->
+        <!--        </dependency>-->
 
 
     </dependencies>
