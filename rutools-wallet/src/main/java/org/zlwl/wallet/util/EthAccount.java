@@ -1,6 +1,7 @@
 package org.zlwl.wallet.util;
 
 import lombok.Data;
+import org.web3j.crypto.Credentials;
 import org.web3j.crypto.ECKeyPair;
 import org.web3j.crypto.Keys;
 import org.web3j.utils.Numeric;
@@ -30,5 +31,9 @@ public class EthAccount {
 
     public String get0xAddress() {
         return "0x" + this.address;
+    }
+
+    public Credentials getCredentials() {
+        return Credentials.create(this.keyPair);
     }
 }
