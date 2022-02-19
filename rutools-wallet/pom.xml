@@ -5,7 +5,7 @@
     <parent>
         <artifactId>rutools-parent</artifactId>
         <groupId>org.zlwl</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -41,10 +41,11 @@
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.44.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.zlwl</groupId>
             <artifactId>rutools-util</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
             <scope>compile</scope>
         </dependency>
         <!--        <dependency>-->

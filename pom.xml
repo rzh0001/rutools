@@ -7,7 +7,7 @@
     <groupId>org.zlwl</groupId>
     <artifactId>rutools-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>rutools</name>
     <description>华仔的工具类</description>
     <url>https://github.com/rzh0001/rutools</url>
@@ -22,7 +22,7 @@
         <module>rutools-core</module>
         <module>rutools-util</module>
         <module>rutools-wallet</module>
-        <module>tronj-client</module>
+        <module>rutools-ethereum-api</module>
     </modules>
 
     <properties>
@@ -64,7 +64,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
-            <scope>provided</scope>
+            <!--            <scope>provided</scope>-->
         </dependency>
 
 

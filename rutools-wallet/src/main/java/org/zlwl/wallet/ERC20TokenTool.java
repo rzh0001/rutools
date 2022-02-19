@@ -58,14 +58,27 @@ public class ERC20TokenTool {
         return hex2dec(response.getValue());
     }
 
-    public static EthSendTransaction transfer(String from, String to, BigInteger amount, String contract, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
+    /**
+     * ERC20代币转账
+     *
+     * @param to          收款地址
+     * @param amount      转账金额
+     * @param contract    代币合约地址
+     * @param credentials 密钥
+     * @param web3j       cli ent
+     * @return 交易哈希
+     * @throws ExecutionException
+     * @throws InterruptedException
+     * @throws IOException
+     */
+    public static String transfer(String to, BigInteger amount, String contract, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
         Function function = new Function("transfer",
                 List.of(new Address(to), new Uint256(amount)),
                 List.of(new TypeReference<Address>() {
                 }));
 
         //获取交易笔数
-        BigInteger nonce = EthTool.getNonce(from, web3j);
+        BigInteger nonce = EthTool.getNonce(credentials.getAddress(), web3j);
 
         //手续费
         BigInteger gasPrice = EthTool.getGesPrice(web3j);
@@ -81,7 +94,7 @@ public class ERC20TokenTool {
         byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
         String hexValue = Numeric.toHexString(signMessage);
         //发起交易
-        return web3j.ethSendRawTransaction(hexValue).sendAsync().get();
+        return web3j.ethSendRawTransaction(hexValue).sendAsync().get().getTransactionHash();
     }
 
     private static EthCall call(String address, String contract, String encode, Web3j web3j) throws InterruptedException, ExecutionException {
@@ -139,38 +152,6 @@ public class ERC20TokenTool {
 
 
         BigInteger amount = BigDecimal.valueOf(2).multiply(DecimalTool.tenPow(18)).toBigInteger();
-        try {
-            EthSendTransaction transaction = transfer(address, to, amount, LINK_CONTRACT_RINKEBY, ethAccount.getCredentials(), web3j);
-            System.out.println(transaction.getResult());
-            System.out.println(transaction.getTransactionHash());
-            System.out.println(transaction.getRawResponse());
-            System.out.println(transaction.getError());
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-//        String encodedFunction = FunctionEncoder.encode(function);
-//        org.web3j.protocol.core.methods.response.EthCall response = null;
-//        try {
-//            response = web3j.ethCall(
-//                            Transaction.createEthCallTransaction(ox0, LINK_CONTRACT_RINKEBY, encodedFunction),
-//                            DefaultBlockParameterName.LATEST)
-//                    .sendAsync().get();
-//            response.getValue();
-//            System.out.println(hex2dec(response.getValue()));
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
-//
-//        List<Type> someTypes = FunctionReturnDecoder.decode(
-//                response.getValue(), function.getOutputParameters());
-//        someTypes.isEmpty();
 
 
     }
