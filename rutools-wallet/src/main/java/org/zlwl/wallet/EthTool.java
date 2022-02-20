@@ -56,6 +56,10 @@ public class EthTool {
         return ethGasPrice.getGasPrice();
     }
 
+    public static long getChainId(Web3j web3j) throws IOException {
+        return web3j.ethChainId().send().getChainId().longValue();
+    }
+
 
     public String toDecimal(int decimal, BigInteger integer) {
         StringBuffer sbf = new StringBuffer("1");

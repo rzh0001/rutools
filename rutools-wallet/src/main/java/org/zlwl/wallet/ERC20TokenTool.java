@@ -2,9 +2,12 @@ package org.zlwl.wallet;
 
 import org.jetbrains.annotations.NotNull;
 import org.web3j.abi.FunctionEncoder;
+import org.web3j.abi.FunctionReturnDecoder;
 import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Address;
 import org.web3j.abi.datatypes.Function;
+import org.web3j.abi.datatypes.Type;
+import org.web3j.abi.datatypes.Utf8String;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.RawTransaction;
@@ -15,6 +18,8 @@ import org.web3j.protocol.core.methods.request.Transaction;
 import org.web3j.protocol.core.methods.response.EthCall;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.http.HttpService;
+import org.web3j.tx.RawTransactionManager;
+import org.web3j.tx.TransactionManager;
 import org.web3j.utils.Numeric;
 import org.zlwl.util.DecimalTool;
 import org.zlwl.wallet.util.EthAccount;
@@ -27,24 +32,52 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import static org.zlwl.wallet.EthTool.getChainId;
+
 /**
  * @author ruanzh.eth
  */
 public class ERC20TokenTool {
 
-    public static String totalSupply(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
-        Function function = new Function("totalSupply", new ArrayList<>(), new ArrayList<>());
-        String encodedFunction = FunctionEncoder.encode(function);
-        EthCall response = call(Ox00, contract, encodedFunction, web3j);
-        return hex2dec(response.getValue());
+    public static BigInteger totalSupply(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
+        String name = "totalSupply";
+        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Uint256>() {
+        });
+        Function function = new Function(name, new ArrayList<>(), outputParameters);
+        EthCall response = query(function, Ox00, contract, web3j);
+        List<Type> results = FunctionReturnDecoder.decode(response.getValue(), function.getOutputParameters());
+        return (BigInteger) results.get(0).getValue();
 
     }
 
-    public static String decimals(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
-        Function function = new Function("decimals", new ArrayList<>(), new ArrayList<>());
-        String encodedFunction = FunctionEncoder.encode(function);
-        EthCall response = call(Ox00, contract, encodedFunction, web3j);
-        return hex2dec(response.getValue());
+    public static BigInteger decimals(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
+        String name = "decimals";
+        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Uint256>() {
+        });
+        Function function = new Function(name, new ArrayList<>(), outputParameters);
+        EthCall response = query(function, Ox00, contract, web3j);
+        List<Type> results = FunctionReturnDecoder.decode(response.getValue(), function.getOutputParameters());
+        return (BigInteger) results.get(0).getValue();
+    }
+
+    public static String name(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
+        String name = "name";
+        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Utf8String>() {
+        });
+        Function function = new Function(name, new ArrayList<>(), outputParameters);
+        EthCall response = query(function, Ox00, contract, web3j);
+        List<Type> results = FunctionReturnDecoder.decode(response.getValue(), function.getOutputParameters());
+        return results.get(0).getValue().toString();
+    }
+
+    public static String symbol(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
+        String name = "symbol";
+        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Utf8String>() {
+        });
+        Function function = new Function(name, new ArrayList<>(), outputParameters);
+        EthCall response = query(function, Ox00, contract, web3j);
+        List<Type> results = FunctionReturnDecoder.decode(response.getValue(), function.getOutputParameters());
+        return results.get(0).getValue().toString();
     }
 
     public static String balanceOf(String address, String contract, Web3j web3j) throws ExecutionException, InterruptedException {
@@ -53,8 +86,7 @@ public class ERC20TokenTool {
                 List.of(new TypeReference<Address>() {
                 }));
 
-        String encode = FunctionEncoder.encode(function);
-        EthCall response = call(address, contract, encode, web3j);
+        EthCall response = query(function, address, contract, web3j);
         return hex2dec(response.getValue());
     }
 
@@ -65,13 +97,13 @@ public class ERC20TokenTool {
      * @param amount      转账金额
      * @param contract    代币合约地址
      * @param credentials 密钥
-     * @param web3j       cli ent
+     * @param web3j       client
      * @return 交易哈希
      * @throws ExecutionException
      * @throws InterruptedException
      * @throws IOException
      */
-    public static String transfer(String to, BigInteger amount, String contract, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
+    public static String legacyTransfer(String to, BigInteger amount, String contract, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
         Function function = new Function("transfer",
                 List.of(new Address(to), new Uint256(amount)),
                 List.of(new TypeReference<Address>() {
@@ -95,6 +127,38 @@ public class ERC20TokenTool {
         String hexValue = Numeric.toHexString(signMessage);
         //发起交易
         return web3j.ethSendRawTransaction(hexValue).sendAsync().get().getTransactionHash();
+    }
+
+    public static String transfer(String to, BigInteger amount, String contract, BigInteger maxPriorityFeePerGas, BigInteger maxFeePerGas, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
+        Function function = new Function("transfer",
+                List.of(new Address(to), new Uint256(amount)),
+                List.of(new TypeReference<Address>() {
+                }));
+
+        //获取交易笔数
+        BigInteger nonce = EthTool.getNonce(credentials.getAddress(), web3j);
+
+        //手续费
+        BigInteger gasPrice = EthTool.getGesPrice(web3j);
+
+        //注意手续费的设置，这块很容易遇到问题
+        BigInteger gasLimit = BigInteger.valueOf(600000L);
+
+        long chainId = getChainId(web3j);
+
+
+        String rawData = FunctionEncoder.encode(function);
+
+        TransactionManager manager = new RawTransactionManager(web3j, credentials);
+        EthSendTransaction transaction = manager.sendEIP1559Transaction(chainId, maxPriorityFeePerGas, maxFeePerGas, gasLimit, to, rawData, amount);
+
+        //发起交易
+        return transaction.getTransactionHash();
+    }
+
+    private static EthCall query(Function function, String address, String contract, Web3j web3j) throws InterruptedException, ExecutionException {
+        String rawData = FunctionEncoder.encode(function);
+        return call(address, contract, rawData, web3j);
     }
 
     private static EthCall call(String address, String contract, String encode, Web3j web3j) throws InterruptedException, ExecutionException {
