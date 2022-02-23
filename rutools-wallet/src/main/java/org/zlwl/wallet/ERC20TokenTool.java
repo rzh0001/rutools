@@ -150,7 +150,7 @@ public class ERC20TokenTool {
         String rawData = FunctionEncoder.encode(function);
 
         TransactionManager manager = new RawTransactionManager(web3j, credentials);
-        EthSendTransaction transaction = manager.sendEIP1559Transaction(chainId, maxPriorityFeePerGas, maxFeePerGas, gasLimit, to, rawData, amount);
+        EthSendTransaction transaction = manager.sendEIP1559Transaction(chainId, maxPriorityFeePerGas, maxFeePerGas, gasLimit, contract, rawData, amount);
 
         //发起交易
         return transaction.getTransactionHash();

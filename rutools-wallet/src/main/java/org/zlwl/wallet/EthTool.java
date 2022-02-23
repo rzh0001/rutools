@@ -6,6 +6,8 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.admin.Admin;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 
+import org.web3j.protocol.core.methods.request.Transaction;
+import org.web3j.protocol.core.methods.response.EthEstimateGas;
 import org.web3j.protocol.core.methods.response.EthGasPrice;
 import org.web3j.protocol.core.methods.response.EthGetTransactionCount;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
@@ -24,20 +26,17 @@ import static org.zlwl.wallet.Infura.INFURA_MAINNET_URL;
 
 public class EthTool {
 
-
-    private static final Admin admin = Admin.build(new HttpService(INFURA_MAINNET_URL));
-
-
-    private static final BigDecimal decimal = new BigDecimal("1000000000000000000");
-
-
-    public static BigDecimal getEthBalance(String address, int decimals) throws IOException {
-        BigInteger balance = admin.ethGetBalance(address, DefaultBlockParameterName.LATEST).send().getBalance();
-        return new BigDecimal(balance).divide(DecimalTool.tenPow(decimals));
+    public static BigDecimal getEthBalance(String address, Web3j web3j) throws IOException {
+        BigInteger balance = web3j.ethGetBalance(address, DefaultBlockParameterName.LATEST).send().getBalance();
+        return Convert.fromWei(String.valueOf(balance), Convert.Unit.ETHER);
     }
 
-    public static TransactionReceipt ethSend(Credentials credentials, Web3j client, String toAddress, BigDecimal amount) throws Exception {
-        return Transfer.sendFunds(client, credentials, toAddress, amount, Convert.Unit.ETHER).send();
+    public static TransactionReceipt legacyTransfer(Credentials credentials, String toAddress, BigDecimal amount, Web3j web3j) throws Exception {
+        return Transfer.sendFunds(web3j, credentials, toAddress, amount, Convert.Unit.ETHER).send();
+    }
+
+    public static TransactionReceipt transfer(Credentials credentials, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger maxPriorityFeePerGas, BigInteger maxFeePerGas, Web3j web3j) throws Exception {
+        return Transfer.sendFundsEIP1559(web3j, credentials, toAddress, amount, Convert.Unit.ETHER, gasLimit, maxPriorityFeePerGas, maxFeePerGas).send();
     }
 
     public static BigInteger getNonce(String address, Web3j web3j) throws IOException {
@@ -60,38 +59,21 @@ public class EthTool {
         return web3j.ethChainId().send().getChainId().longValue();
     }
 
-
-    public String toDecimal(int decimal, BigInteger integer) {
-        StringBuffer sbf = new StringBuffer("1");
-        for (int i = 0; i < decimal; i++) {
-            sbf.append("0");
-        }
-        String balance = new BigDecimal(integer).divide(new BigDecimal(sbf.toString())).toPlainString();
-        return balance;
-    }
-
-
-    public static void main(String[] args) {
-        String add = "0x7339917906EcB9e5f7F6A2009e70bBEa7B0C1d43";
-
-
+    /**
+     * 获取普通交易的gas上限
+     *
+     * @param transaction 交易对象
+     * @return gas 上限
+     */
+    private static BigInteger getTransactionGasLimit(Transaction transaction, Web3j web3j) {
+        BigInteger gasLimit = BigInteger.ZERO;
         try {
-            BigInteger gasPrice1 = admin.ethGasPrice().send().getGasPrice();
-            System.out.println(gasPrice1);
-
-            BigInteger balance = admin.ethGetBalance(add, DefaultBlockParameterName.LATEST).send().getBalance();
-            System.out.println(balance);
+            EthEstimateGas ethEstimateGas = web3j.ethEstimateGas(transaction).send();
+            gasLimit = ethEstimateGas.getAmountUsed();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        BigDecimal ethBalance = null;
-        try {
-            ethBalance = getEthBalance(add, 18);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(ethBalance);
-
+        return gasLimit;
     }
+
 }

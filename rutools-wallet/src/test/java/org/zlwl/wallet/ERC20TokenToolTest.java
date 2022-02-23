@@ -52,8 +52,8 @@ class ERC20TokenToolTest {
         toAddress = "0x3B3B43614C7E8e362A1f680d0696E054D9d850Db";
         balance = new BigDecimal("296");
 
-        maxPriorityFeePerGas = new BigInteger("30");
-        maxFeePerGas = new BigInteger("80");
+        maxPriorityFeePerGas = new BigInteger("3000");
+        maxFeePerGas = new BigInteger("8000");
         amount = new BigDecimal(2);
     }
 

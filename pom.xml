@@ -7,7 +7,7 @@
     <groupId>org.zlwl</groupId>
     <artifactId>rutools-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>rutools</name>
     <description>华仔的工具类</description>
     <url>https://github.com/rzh0001/rutools</url>
