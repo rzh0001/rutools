@@ -1,9 +1,9 @@
 package org.zlwl.ethereum.api;
 
 
-import javax.annotation.processing.Generated;
-
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 
 @Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")

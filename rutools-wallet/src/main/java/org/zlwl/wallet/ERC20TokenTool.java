@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -41,7 +42,7 @@ public class ERC20TokenTool {
 
     public static BigInteger totalSupply(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
         String name = "totalSupply";
-        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Uint256>() {
+        List<TypeReference<?>> outputParameters = Arrays.asList(new TypeReference<Uint256>() {
         });
         Function function = new Function(name, new ArrayList<>(), outputParameters);
         EthCall response = query(function, Ox00, contract, web3j);
@@ -52,7 +53,7 @@ public class ERC20TokenTool {
 
     public static BigInteger decimals(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
         String name = "decimals";
-        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Uint256>() {
+        List<TypeReference<?>> outputParameters = Arrays.asList(new TypeReference<Uint256>() {
         });
         Function function = new Function(name, new ArrayList<>(), outputParameters);
         EthCall response = query(function, Ox00, contract, web3j);
@@ -62,7 +63,7 @@ public class ERC20TokenTool {
 
     public static String name(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
         String name = "name";
-        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Utf8String>() {
+        List<TypeReference<?>> outputParameters = Arrays.asList(new TypeReference<Utf8String>() {
         });
         Function function = new Function(name, new ArrayList<>(), outputParameters);
         EthCall response = query(function, Ox00, contract, web3j);
@@ -72,7 +73,7 @@ public class ERC20TokenTool {
 
     public static String symbol(String contract, Web3j web3j) throws ExecutionException, InterruptedException {
         String name = "symbol";
-        List<TypeReference<?>> outputParameters = List.of(new TypeReference<Utf8String>() {
+        List<TypeReference<?>> outputParameters = Arrays.asList(new TypeReference<Utf8String>() {
         });
         Function function = new Function(name, new ArrayList<>(), outputParameters);
         EthCall response = query(function, Ox00, contract, web3j);
@@ -82,8 +83,8 @@ public class ERC20TokenTool {
 
     public static String balanceOf(String address, String contract, Web3j web3j) throws ExecutionException, InterruptedException {
         Function function = new Function("balanceOf",
-                List.of(new Address(address)),
-                List.of(new TypeReference<Address>() {
+                Arrays.asList(new Address(address)),
+                Arrays.asList(new TypeReference<Address>() {
                 }));
 
         EthCall response = query(function, address, contract, web3j);
@@ -105,8 +106,8 @@ public class ERC20TokenTool {
      */
     public static String legacyTransfer(String to, BigInteger amount, String contract, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
         Function function = new Function("transfer",
-                List.of(new Address(to), new Uint256(amount)),
-                List.of(new TypeReference<Address>() {
+                Arrays.asList(new Address(to), new Uint256(amount)),
+                Arrays.asList(new TypeReference<Address>() {
                 }));
 
         //获取交易笔数
@@ -131,8 +132,8 @@ public class ERC20TokenTool {
 
     public static String transfer(String to, BigInteger amount, String contract, BigInteger maxPriorityFeePerGas, BigInteger maxFeePerGas, Credentials credentials, Web3j web3j) throws ExecutionException, InterruptedException, IOException {
         Function function = new Function("transfer",
-                List.of(new Address(to), new Uint256(amount)),
-                List.of(new TypeReference<Address>() {
+                Arrays.asList(new Address(to), new Uint256(amount)),
+                Arrays.asList(new TypeReference<Address>() {
                 }));
 
         //获取交易笔数

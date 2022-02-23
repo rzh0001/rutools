@@ -7,6 +7,7 @@ import org.web3j.crypto.*;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 助記詞工具類
@@ -30,7 +31,7 @@ public class MnemonicTool {
     }
 
     public static byte[] toSeed(String mnemonic, String password) {
-        List<String> words = Arrays.stream(mnemonic.split(" ")).toList();
+        List<String> words = Arrays.stream(mnemonic.split(" ")).collect(Collectors.toList());
         return MnemonicCode.toSeed(words, password);
     }
 

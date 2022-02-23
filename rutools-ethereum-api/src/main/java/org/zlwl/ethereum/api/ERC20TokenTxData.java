@@ -1,7 +1,6 @@
 package org.zlwl.ethereum.api;
 
-
-import javax.annotation.processing.Generated;
+import javax.annotation.Generated;
 
 import com.google.gson.annotations.SerializedName;
 
