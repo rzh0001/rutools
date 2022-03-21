@@ -22,7 +22,7 @@ import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
 import org.web3j.utils.Numeric;
 import org.zlwl.util.DecimalTool;
-import org.zlwl.wallet.util.EthAccount;
+import org.zlwl.wallet.entity.EthAccount;
 import org.zlwl.wallet.util.MnemonicTool;
 
 import java.io.IOException;

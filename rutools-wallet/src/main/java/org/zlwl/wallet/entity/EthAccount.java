@@ -1,4 +1,4 @@
-package org.zlwl.wallet.util;
+package org.zlwl.wallet.entity;
 
 import lombok.Data;
 import org.web3j.crypto.Credentials;

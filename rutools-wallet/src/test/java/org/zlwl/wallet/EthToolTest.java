@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.Request;
+import org.web3j.protocol.core.methods.response.EthCoinbase;
+import org.web3j.protocol.core.methods.response.NetVersion;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.tx.Transfer;
 import org.web3j.tx.gas.DefaultGasProvider;
@@ -92,7 +95,10 @@ class EthToolTest {
     }
 
     @Test
-    void getNonce() {
+    void getNonce() throws IOException {
+        NetVersion version = web3j.netVersion().send();
+        String netVersion = version.getNetVersion();
+        System.out.println(netVersion);
     }
 
     @Test

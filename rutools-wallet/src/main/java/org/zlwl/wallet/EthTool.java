@@ -63,7 +63,8 @@ public class EthTool {
      * 获取普通交易的gas上限
      *
      * @param transaction 交易对象
-     * @return gas 上限
+     * @param web3j       web3j
+     * @return {@link BigInteger}
      */
     private static BigInteger getTransactionGasLimit(Transaction transaction, Web3j web3j) {
         BigInteger gasLimit = BigInteger.ZERO;

@@ -3,6 +3,7 @@ package org.zlwl.wallet.util;
 import com.google.common.collect.ImmutableList;
 import org.bitcoinj.crypto.*;
 import org.web3j.crypto.*;
+import org.zlwl.wallet.entity.EthAccount;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
