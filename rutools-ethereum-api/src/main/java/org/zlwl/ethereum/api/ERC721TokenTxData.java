@@ -3,7 +3,8 @@ package org.zlwl.ethereum.api;
 
 import com.google.gson.annotations.SerializedName;
 
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
+
 
 @Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
