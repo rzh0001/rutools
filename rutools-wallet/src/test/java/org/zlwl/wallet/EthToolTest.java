@@ -106,7 +106,9 @@ class EthToolTest {
     }
 
     @Test
-    void getChainId() {
+    void getChainId() throws IOException {
+        long chainId = EthTool.getChainId(web3j);
+        System.out.println(chainId);
     }
 
 

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.zlwl.util.DecimalTool;
 import org.zlwl.wallet.util.MnemonicTool;
 
@@ -89,7 +90,7 @@ class ERC20TokenToolTest {
 
     @Test
     void transfer() throws IOException, ExecutionException, InterruptedException {
-        String s = ERC20TokenTool.transfer(toAddress, amount.multiply(DecimalTool.tenPow(decimals)).toBigInteger(), contract, maxPriorityFeePerGas, maxFeePerGas, credentials, web3j);
+        EthSendTransaction s = ERC20TokenTool.transfer(toAddress, amount.multiply(DecimalTool.tenPow(decimals)).toBigInteger(), contract, maxPriorityFeePerGas, maxFeePerGas, credentials, web3j);
         System.out.println(s);
     }
 

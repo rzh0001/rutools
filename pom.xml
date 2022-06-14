@@ -7,7 +7,7 @@
     <groupId>org.zlwl</groupId>
     <artifactId>rutools-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <name>rutools</name>
     <description>华仔的工具类</description>
     <url>https://github.com/rzh0001/rutools</url>
@@ -23,6 +23,9 @@
         <module>rutools-util</module>
         <module>rutools-wallet</module>
         <module>rutools-ethereum-api</module>
+        <module>tronj-abi</module>
+        <module>tronj-client</module>
+        <module>tronj-utils</module>
     </modules>
 
     <properties>
