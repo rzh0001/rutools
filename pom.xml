@@ -7,7 +7,7 @@
     <groupId>org.zlwl</groupId>
     <artifactId>rutools-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.5</version>
+    <version>1.0.8</version>
     <name>rutools</name>
     <description>华仔的工具类</description>
     <url>https://github.com/rzh0001/rutools</url>
@@ -23,9 +23,7 @@
         <module>rutools-util</module>
         <module>rutools-wallet</module>
         <module>rutools-ethereum-api</module>
-        <module>tronj-abi</module>
-        <module>tronj-client</module>
-        <module>tronj-utils</module>
+        <module>rutools-trident</module>
     </modules>
 
     <properties>
@@ -157,6 +155,19 @@
                                 </goals>
                             </execution>
                         </executions>
+<!--                        <configuration>-->
+<!--                            <failOnError>false</failOnError>-->
+<!--                            <quiet>true</quiet>-->
+<!--                        </configuration>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <id>attach-javadocs</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>jar</goal>-->
+<!--                                </goals>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -169,10 +180,10 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-                                <configuration>
-                                    <keyname>0x5BD64B7F</keyname>
-                                    <passphraseServerId>Qq187179524.</passphraseServerId>
-                                </configuration>
+<!--                                <configuration>-->
+<!--                                    <keyname>0x5BD64B7F</keyname>-->
+<!--                                    <passphraseServerId>Qq187179524.</passphraseServerId>-->
+<!--                                </configuration>-->
                             </execution>
                         </executions>
                     </plugin>

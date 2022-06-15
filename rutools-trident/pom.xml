@@ -5,30 +5,54 @@
     <parent>
         <artifactId>rutools-parent</artifactId>
         <groupId>org.zlwl</groupId>
-        <version>1.0.5</version>
+        <version>1.0.8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <artifactId>rutools-trident</artifactId>
 
-    <artifactId>tronj-client</artifactId>
-    <name>${project.artifactId}</name>
-    <description>华仔的工具类</description>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
 
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/io.vertx/vertx-core -->
         <dependency>
-            <groupId>org.zlwl</groupId>
-            <artifactId>tronj-utils</artifactId>
-            <version>1.0.5</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.zlwl</groupId>
-            <artifactId>tronj-abi</artifactId>
-            <version>1.0.5</version>
-            <scope>compile</scope>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>3.5.4</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.42.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.67</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java-util</artifactId>
@@ -69,8 +93,6 @@
             <artifactId>grpc-okhttp</artifactId>
             <version>1.31.0</version>
         </dependency>
-
-
     </dependencies>
 
 </project>
