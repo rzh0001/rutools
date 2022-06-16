@@ -23,7 +23,6 @@
         <module>rutools-util</module>
         <module>rutools-wallet</module>
         <module>rutools-ethereum-api</module>
-        <module>rutools-trident</module>
     </modules>
 
     <properties>
@@ -85,7 +84,7 @@
             <scope>test</scope>
         </dependency>
 
-
+        <!--  ====  解决maven插件缺失的问题，先打开这部分依赖，安装完再注释掉  ====  -->
         <!--        <dependency>-->
         <!--            <groupId>org.apache.maven.plugins</groupId>-->
         <!--            <artifactId>maven-javadoc-plugin</artifactId>-->
@@ -108,7 +107,7 @@
         <!--            <artifactId>xstream</artifactId>-->
         <!--            <version>1.4.15</version> &lt;!&ndash; apparently this needs to be exactly this version &ndash;&gt;-->
         <!--        </dependency>-->
-
+        <!--  ====  解决maven插件缺失的问题，先打开这部分依赖，安装完再注释掉  ====  -->
 
     </dependencies>
 
@@ -155,10 +154,10 @@
                                 </goals>
                             </execution>
                         </executions>
-                        <configuration>
-                            <failOnError>false</failOnError>
-                            <quiet>true</quiet>
-                        </configuration>
+<!--                        <configuration>-->
+<!--                            <failOnError>false</failOnError>-->
+<!--                            <quiet>true</quiet>-->
+<!--                        </configuration>-->
 <!--                        <executions>-->
 <!--                            <execution>-->
 <!--                                <id>attach-javadocs</id>-->
