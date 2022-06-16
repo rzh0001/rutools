@@ -21,16 +21,21 @@ public final class Base58Check {
   /*---- Static functions ----*/
 
   /**
-   * 字节base58
+   * Adds the checksum and converts to Base58Check. Note that the caller needs to prepend the version byte(s).
    *
    * @param data 数据
    * @return {@link String}
-   */// Adds the checksum and converts to Base58Check. Note that the caller needs to prepend the version byte(s).
+   */
   public static String bytesToBase58(byte[] data) {
     return rawBytesToBase58(addCheckHash(data));
   }
 
-  // Directly converts to Base58Check without adding a checksum.
+  /**
+   * 元数据字节转换base58
+   * Directly converts to Base58Check without adding a checksum.
+   * @param data 数据
+   * @return {@link String}
+   */
   static String rawBytesToBase58(byte[] data) {
     // Convert to base-58 string
     StringBuilder sb = new StringBuilder();

@@ -1076,20 +1076,23 @@ public class ApiWrapper {
     }
 
     /**
+     * 创建资产问题
      * Issue a token
-     * @param ownerAddress Owner address, default hexString
-     * @param name Token name, default hexString
-     * @param abbr Token name abbreviation, default hexString
-     * @param totalSupply Token total supply
-     * @param trxNum Define the price by the ratio of trx_num/num
-     * @param icoNum Define the price by the ratio of trx_num/num
-     * @param startTime ICO start time
-     * @param endTime ICO end time
-     * @param url Token official website url, default hexString
-     * @param freeAssetNetLimit Token free asset net limit
+     *
+     * @param ownerAddress            Owner address, default hexString
+     * @param name                    Token name, default hexString
+     * @param abbr                    Token name abbreviation, default hexString
+     * @param totalSupply             Token total supply
+     * @param trxNum                  Define the price by the ratio of trx_num/num
+     * @param icoNum                  Define the price by the ratio of trx_num/num
+     * @param startTime               ICO start time
+     * @param endTime                 ICO end time
+     * @param url                     Token official website url, default hexString
+     * @param freeAssetNetLimit       Token free asset net limit
      * @param publicFreeAssetNetLimit Token public free asset net limit
-     * @param frozenSupply HashMap<frozenDay, frozenAmount>
-     * @param description Token description, default hexString
+     * @param frozenSupply            HashMap<frozenDay, frozenAmount>
+     * @param description             Token description, default hexString
+     * @param precision               精度
      * @return TransactionExtention
      * @throws IllegalException if fail to create AssetIssue
      */
@@ -1122,19 +1125,22 @@ public class ApiWrapper {
     }
 
     /**
+     * 创建资产问题
      * Issue a token
-     * @param ownerAddress Owner address, default hexString
-     * @param name Token name, default hexString
-     * @param abbr Token name abbreviation, default hexString
-     * @param totalSupply Token total supply
-     * @param trxNum Define the price by the ratio of trx_num/num
-     * @param icoNum Define the price by the ratio of trx_num/num
-     * @param startTime ICO start time
-     * @param endTime ICO end time
-     * @param url Token official website url, default hexString
-     * @param freeAssetNetLimit Token free asset net limit
+     *
+     * @param ownerAddress            Owner address, default hexString
+     * @param name                    Token name, default hexString
+     * @param abbr                    Token name abbreviation, default hexString
+     * @param totalSupply             Token total supply
+     * @param trxNum                  Define the price by the ratio of trx_num/num
+     * @param icoNum                  Define the price by the ratio of trx_num/num
+     * @param startTime               ICO start time
+     * @param endTime                 ICO end time
+     * @param url                     Token official website url, default hexString
+     * @param freeAssetNetLimit       Token free asset net limit
      * @param publicFreeAssetNetLimit Token public free asset net limit
-     * @param description Token description, default hexString
+     * @param description             Token description, default hexString
+     * @param precision               精度
      * @return TransactionExtention
      * @throws IllegalException if fail to create AssetIssue
      */
@@ -1171,7 +1177,7 @@ public class ApiWrapper {
      * @param publicFreeAssetNetLimit 公共资产净限制自由
      * @param precision               精度
      * @param description             描述
-     * @return {@link Builder}
+     * @return {@link AssetIssueContract.Builder}
      */
     public AssetIssueContract.Builder assetIssueContractBuilder(String ownerAddress, String name, String abbr,
                                                  long totalSupply, int trxNum, int icoNum, long startTime, long endTime,
@@ -1271,9 +1277,12 @@ public class ApiWrapper {
     }
 
     /**
+     * 获取事务批准列表
      * Query transaction approvedList
+     *
      * @param trx transaction object
      * @return TransactionApprovedList
+     * @throws InvalidProtocolBufferException 无效协议缓冲异常
      */
     public TransactionApprovedList getTransactionApprovedList(Transaction trx) throws InvalidProtocolBufferException {
 
@@ -1334,7 +1343,7 @@ public class ApiWrapper {
      * @param address address, default hexString
      * @return NumberMessage
      */
-    public NumberMessage getRewardSolidity(String address) throws IllegalException {
+    public NumberMessage getRewardSolidity(String address) {
         ByteString bsAddress = parseAddress(address);
         BytesMessage bytesMessage = BytesMessage.newBuilder()
                 .setValue(bsAddress)

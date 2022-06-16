@@ -50,8 +50,12 @@ public final class Chain {
      * @return The rawData.
      */
     org.zlwl.trident.proto.Chain.Transaction.raw getRawData();
+
     /**
+     * 得到元数据数据或构建器
      * <code>.protocol.Transaction.raw raw_data = 1;</code>
+     *
+     * @return data
      */
     org.zlwl.trident.proto.Chain.Transaction.rawOrBuilder getRawDataOrBuilder();
 
@@ -85,12 +89,20 @@ public final class Chain {
     com.google.protobuf.ByteString getSignature(int index);
 
     /**
+     * 得到ret列表
      * <code>repeated .protocol.Transaction.Result ret = 5;</code>
+     *
+     * @return data
      */
     java.util.List<org.zlwl.trident.proto.Chain.Transaction.Result> 
         getRetList();
+
     /**
+     * 得到受潮湿腐烂
      * <code>repeated .protocol.Transaction.Result ret = 5;</code>
+     *
+     * @param index 指数
+     * @return data
      */
     org.zlwl.trident.proto.Chain.Transaction.Result getRet(int index);
 
@@ -106,7 +118,7 @@ public final class Chain {
      * 受潮湿腐烂或构建器列表
      * <code>repeated .protocol.Transaction.Result ret = 5;</code>
      *
-     * @return {@link java.util.List}<{@link ?} {@link extends} {@link org.zlwl.trident.proto.Chain.Transaction.ResultOrBuilder}>
+     * @return data
      */
     java.util.List<? extends org.zlwl.trident.proto.Chain.Transaction.ResultOrBuilder> 
         getRetOrBuilderList();
@@ -565,6 +577,9 @@ public final class Chain {
          * <code>MarketCancelOrderContract = 53;</code>
          */
         MarketCancelOrderContract(53),
+        /**
+         * 未被认可
+         */
         UNRECOGNIZED(-1),
         ;
 
@@ -781,7 +796,7 @@ public final class Chain {
         /**
          * 内部得到价值地图
          *
-         * @return {@link com.google.protobuf.Internal.EnumLiteMap}<{@link ContractType}>
+         * @return data
          */
         public static com.google.protobuf.Internal.EnumLiteMap<ContractType>
             internalGetValueMap() {
@@ -915,6 +930,9 @@ public final class Chain {
         return getParameter();
       }
 
+      /**
+       * 提供者域编号
+       */
       public static final int PROVIDER_FIELD_NUMBER = 3;
       private com.google.protobuf.ByteString provider_;
       /**
@@ -926,6 +944,9 @@ public final class Chain {
         return provider_;
       }
 
+      /**
+       * contractname域编号
+       */
       public static final int CONTRACTNAME_FIELD_NUMBER = 4;
       private com.google.protobuf.ByteString contractName_;
       /**
@@ -937,6 +958,9 @@ public final class Chain {
         return contractName_;
       }
 
+      /**
+       * 权限id字段数
+       */
       public static final int PERMISSION_ID_FIELD_NUMBER = 5;
       private int permissionId_;
       /**
@@ -1798,6 +1822,11 @@ public final class Chain {
         }
       };
 
+      /**
+       * 解析器
+       *
+       * @return data
+       */
       public static com.google.protobuf.Parser<Contract> parser() {
         return PARSER;
       }
@@ -2056,6 +2085,9 @@ public final class Chain {
          * <code>FAILED = 1;</code>
          */
         FAILED(1),
+        /**
+         * 未被认可
+         */
         UNRECOGNIZED(-1),
         ;
 
@@ -2069,6 +2101,11 @@ public final class Chain {
         public static final int FAILED_VALUE = 1;
 
 
+        /**
+         * 得到数量
+         *
+         * @return int
+         */
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
             throw new java.lang.IllegalArgumentException(
@@ -2099,6 +2136,11 @@ public final class Chain {
           }
         }
 
+        /**
+         * 内部得到价值地图
+         *
+         * @return data
+         */
         public static com.google.protobuf.Internal.EnumLiteMap<code>
             internalGetValueMap() {
           return internalValueMap;
@@ -2111,6 +2153,11 @@ public final class Chain {
                 }
               };
 
+        /**
+         * 得到值描述符
+         *
+         * @return data
+         */
         public final com.google.protobuf.Descriptors.EnumValueDescriptor
             getValueDescriptor() {
           if (this == UNRECOGNIZED) {
@@ -2119,10 +2166,22 @@ public final class Chain {
           }
           return getDescriptor().getValues().get(ordinal());
         }
+
+        /**
+         * 获取描述符类型
+         *
+         * @return data
+         */
         public final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptorForType() {
           return getDescriptor();
         }
+
+        /**
+         * 获取描述符
+         *
+         * @return data
+         */
         public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
           return org.zlwl.trident.proto.Chain.Transaction.Result.getDescriptor().getEnumTypes().get(0);
@@ -2130,6 +2189,12 @@ public final class Chain {
 
         private static final code[] VALUES = values();
 
+        /**
+         * 价值
+         *
+         * @param desc desc
+         * @return {@link code}
+         */
         public static code valueOf(
             com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
           if (desc.getType() != getDescriptor()) {
@@ -2216,6 +2281,9 @@ public final class Chain {
          * <code>TRANSFER_FAILED = 14;</code>
          */
         TRANSFER_FAILED(14),
+        /**
+         * 未被认可
+         */
         UNRECOGNIZED(-1),
         ;
 
@@ -2281,6 +2349,11 @@ public final class Chain {
         public static final int TRANSFER_FAILED_VALUE = 14;
 
 
+        /**
+         * 得到数量
+         *
+         * @return int
+         */
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
             throw new java.lang.IllegalArgumentException(
@@ -2324,6 +2397,11 @@ public final class Chain {
           }
         }
 
+        /**
+         * 内部得到价值地图
+         *
+         * @return data
+         */
         public static com.google.protobuf.Internal.EnumLiteMap<contractResult>
             internalGetValueMap() {
           return internalValueMap;
@@ -2336,6 +2414,11 @@ public final class Chain {
                 }
               };
 
+        /**
+         * 得到值描述符
+         *
+         * @return data
+         */
         public final com.google.protobuf.Descriptors.EnumValueDescriptor
             getValueDescriptor() {
           if (this == UNRECOGNIZED) {
@@ -2344,10 +2427,22 @@ public final class Chain {
           }
           return getDescriptor().getValues().get(ordinal());
         }
+
+        /**
+         * 获取描述符类型
+         *
+         * @return data
+         */
         public final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptorForType() {
           return getDescriptor();
         }
+
+        /**
+         * 获取描述符
+         *
+         * @return data
+         */
         public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
           return org.zlwl.trident.proto.Chain.Transaction.Result.getDescriptor().getEnumTypes().get(1);
@@ -2355,6 +2450,12 @@ public final class Chain {
 
         private static final contractResult[] VALUES = values();
 
+        /**
+         * 价值
+         *
+         * @param desc desc
+         * @return {@link contractResult}
+         */
         public static contractResult valueOf(
             com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
           if (desc.getType() != getDescriptor()) {
@@ -2376,6 +2477,9 @@ public final class Chain {
         // @@protoc_insertion_point(enum_scope:protocol.Transaction.Result.contractResult)
       }
 
+      /**
+       * 费用字段数
+       */
       public static final int FEE_FIELD_NUMBER = 1;
       private long fee_;
       /**
@@ -2387,6 +2491,9 @@ public final class Chain {
         return fee_;
       }
 
+      /**
+       * ret域编号
+       */
       public static final int RET_FIELD_NUMBER = 2;
       private int ret_;
       /**
@@ -2406,6 +2513,9 @@ public final class Chain {
         return result == null ? org.zlwl.trident.proto.Chain.Transaction.Result.code.UNRECOGNIZED : result;
       }
 
+      /**
+       * contractret域编号
+       */
       public static final int CONTRACTRET_FIELD_NUMBER = 3;
       private int contractRet_;
       /**
@@ -2425,6 +2535,9 @@ public final class Chain {
         return result == null ? org.zlwl.trident.proto.Chain.Transaction.Result.contractResult.UNRECOGNIZED : result;
       }
 
+      /**
+       * assetissueid域编号
+       */
       public static final int ASSETISSUEID_FIELD_NUMBER = 14;
       private volatile java.lang.Object assetIssueID_;
       /**
@@ -2463,6 +2576,9 @@ public final class Chain {
         }
       }
 
+      /**
+       * 提取金额字段数
+       */
       public static final int WITHDRAW_AMOUNT_FIELD_NUMBER = 15;
       private long withdrawAmount_;
       /**
@@ -2474,6 +2590,9 @@ public final class Chain {
         return withdrawAmount_;
       }
 
+      /**
+       * 解冻金额字段数
+       */
       public static final int UNFREEZE_AMOUNT_FIELD_NUMBER = 16;
       private long unfreezeAmount_;
       /**
@@ -2485,6 +2604,9 @@ public final class Chain {
         return unfreezeAmount_;
       }
 
+      /**
+       * 交换收到金额字段数量
+       */
       public static final int EXCHANGE_RECEIVED_AMOUNT_FIELD_NUMBER = 18;
       private long exchangeReceivedAmount_;
       /**
@@ -2496,6 +2618,9 @@ public final class Chain {
         return exchangeReceivedAmount_;
       }
 
+      /**
+       * 交易所注入另一个字段数量
+       */
       public static final int EXCHANGE_INJECT_ANOTHER_AMOUNT_FIELD_NUMBER = 19;
       private long exchangeInjectAnotherAmount_;
       /**
@@ -2507,6 +2632,9 @@ public final class Chain {
         return exchangeInjectAnotherAmount_;
       }
 
+      /**
+       * 交换取另一个字段数量
+       */
       public static final int EXCHANGE_WITHDRAW_ANOTHER_AMOUNT_FIELD_NUMBER = 20;
       private long exchangeWithdrawAnotherAmount_;
       /**
@@ -2518,6 +2646,9 @@ public final class Chain {
         return exchangeWithdrawAnotherAmount_;
       }
 
+      /**
+       * 交易id字段数
+       */
       public static final int EXCHANGE_ID_FIELD_NUMBER = 21;
       private long exchangeId_;
       /**
@@ -2529,6 +2660,9 @@ public final class Chain {
         return exchangeId_;
       }
 
+      /**
+       * 保护交易费数量
+       */
       public static final int SHIELDED_TRANSACTION_FEE_FIELD_NUMBER = 22;
       private long shieldedTransactionFee_;
       /**
@@ -2720,43 +2854,110 @@ public final class Chain {
         return hash;
       }
 
+      /**
+       * 解析来自
+       *
+       * @param data 数据
+       * @return {@link Result}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data              数据
+       * @param extensionRegistry 扩展注册表
+       * @return {@link Result}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data 数据
+       * @return {@link Result}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data              数据
+       * @param extensionRegistry 扩展注册表
+       * @return {@link Result}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data 数据
+       * @return {@link Result}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data              数据
+       * @param extensionRegistry 扩展注册表
+       * @return {@link Result}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input 输入
+       * @return {@link Result}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input             输入
+       * @param extensionRegistry 扩展注册表
+       * @return {@link Result}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2764,11 +2965,28 @@ public final class Chain {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
+
+      /**
+       * 开解析
+       *
+       * @param input 输入
+       * @return {@link Result}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
+
+      /**
+       * 开解析
+       *
+       * @param input             输入
+       * @param extensionRegistry 扩展注册表
+       * @return {@link Result}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2776,12 +2994,29 @@ public final class Chain {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input 输入
+       * @return {@link Result}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input             输入
+       * @param extensionRegistry 扩展注册表
+       * @return {@link Result}
+       * @throws  java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2792,9 +3027,22 @@ public final class Chain {
 
       @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
+
+      /**
+       * 新构建器
+       *
+       * @return {@link Builder}
+       */
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
+
+      /**
+       * 新构建器
+       *
+       * @param prototype 原型
+       * @return {@link Builder}
+       */
       public static Builder newBuilder(org.zlwl.trident.proto.Chain.Transaction.Result prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
@@ -2817,6 +3065,11 @@ public final class Chain {
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:protocol.Transaction.Result)
           org.zlwl.trident.proto.Chain.Transaction.ResultOrBuilder {
+        /**
+         * 获取描述符
+         *
+         * @return data
+         */
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return org.zlwl.trident.proto.Chain.internal_static_protocol_Transaction_Result_descriptor;
@@ -2953,6 +3206,12 @@ public final class Chain {
           }
         }
 
+        /**
+         * 合并
+         *
+         * @param other 其他
+         * @return {@link Builder}
+         */
         public Builder mergeFrom(org.zlwl.trident.proto.Chain.Transaction.Result other) {
           if (other == org.zlwl.trident.proto.Chain.Transaction.Result.getDefaultInstance()) return this;
           if (other.getFee() != 0L) {
@@ -3465,12 +3724,19 @@ public final class Chain {
         // @@protoc_insertion_point(builder_scope:protocol.Transaction.Result)
       }
 
-      // @@protoc_insertion_point(class_scope:protocol.Transaction.Result)
+      /**
+       * 默认实例
+       */// @@protoc_insertion_point(class_scope:protocol.Transaction.Result)
       private static final org.zlwl.trident.proto.Chain.Transaction.Result DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new org.zlwl.trident.proto.Chain.Transaction.Result();
       }
 
+      /**
+       * 获取默认实例
+       *
+       * @return {@link Result}
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.Result getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
@@ -3502,6 +3768,11 @@ public final class Chain {
 
     }
 
+    /**
+     * 元数据或构建器
+     *
+     * @author ruanzh.eth
+     */
     public interface rawOrBuilder extends
         // @@protoc_insertion_point(interface_extends:protocol.Transaction.raw)
         com.google.protobuf.MessageOrBuilder {
@@ -3531,25 +3802,46 @@ public final class Chain {
       long getExpiration();
 
       /**
+       * 获得认证列表
        * <code>repeated .protocol.authority auths = 9;</code>
+       *
+       * @return data
        */
       java.util.List<org.zlwl.trident.proto.Common.authority> 
           getAuthsList();
+
       /**
+       * 得到认证
        * <code>repeated .protocol.authority auths = 9;</code>
+       *
+       * @param index 指数
+       * @return data
        */
       org.zlwl.trident.proto.Common.authority getAuths(int index);
+
       /**
+       * 得到认证数
        * <code>repeated .protocol.authority auths = 9;</code>
+       *
+       * @return int
        */
       int getAuthsCount();
+
       /**
+       * 身份验证或构建器列表
        * <code>repeated .protocol.authority auths = 9;</code>
+       *
+       * @return data
        */
       java.util.List<? extends org.zlwl.trident.proto.Common.authorityOrBuilder> 
           getAuthsOrBuilderList();
+
       /**
+       * 身份验证或构建器
        * <code>repeated .protocol.authority auths = 9;</code>
+       *
+       * @param index 指数
+       * @return data
        */
       org.zlwl.trident.proto.Common.authorityOrBuilder getAuthsOrBuilder(
           int index);
@@ -3565,45 +3857,66 @@ public final class Chain {
       com.google.protobuf.ByteString getData();
 
       /**
+       * 得到合约列表
        * <pre>
        * only support size = 1, repeated list here for extension
        * </pre>
        *
        * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+       *
+       * @return data
        */
       java.util.List<org.zlwl.trident.proto.Chain.Transaction.Contract> 
           getContractList();
+
       /**
+       * 得到合约
        * <pre>
        * only support size = 1, repeated list here for extension
        * </pre>
        *
        * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+       *
+       * @param index 指数
+       * @return {@link Contract}
        */
       org.zlwl.trident.proto.Chain.Transaction.Contract getContract(int index);
+
       /**
+       * 得到合约数
        * <pre>
        * only support size = 1, repeated list here for extension
        * </pre>
        *
        * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+       *
+       * @return int
        */
       int getContractCount();
+
       /**
+       * 得到合约或构建器列表
        * <pre>
        * only support size = 1, repeated list here for extension
        * </pre>
        *
        * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+       *
+       * @return data
        */
       java.util.List<? extends org.zlwl.trident.proto.Chain.Transaction.ContractOrBuilder> 
           getContractOrBuilderList();
+
       /**
+       * 得到合约或构建器
        * <pre>
        * only support size = 1, repeated list here for extension
        * </pre>
        *
        * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+       *
+       * @param index 指数
+       * @return {@link ContractOrBuilder}
        */
       org.zlwl.trident.proto.Chain.Transaction.ContractOrBuilder getContractOrBuilder(
           int index);
@@ -3765,6 +4078,12 @@ public final class Chain {
           makeExtensionsImmutable();
         }
       }
+
+      /**
+       * 获取描述符
+       *
+       * @return {data
+       */
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return org.zlwl.trident.proto.Chain.internal_static_protocol_Transaction_raw_descriptor;
@@ -3778,6 +4097,9 @@ public final class Chain {
                 org.zlwl.trident.proto.Chain.Transaction.raw.class, org.zlwl.trident.proto.Chain.Transaction.raw.Builder.class);
       }
 
+      /**
+       * ref块字节字段数量
+       */
       public static final int REF_BLOCK_BYTES_FIELD_NUMBER = 1;
       private com.google.protobuf.ByteString refBlockBytes_;
       /**
@@ -3789,6 +4111,9 @@ public final class Chain {
         return refBlockBytes_;
       }
 
+      /**
+       * ref块num字段数量
+       */
       public static final int REF_BLOCK_NUM_FIELD_NUMBER = 3;
       private long refBlockNum_;
       /**
@@ -3800,6 +4125,9 @@ public final class Chain {
         return refBlockNum_;
       }
 
+      /**
+       * ref块散列字段数量
+       */
       public static final int REF_BLOCK_HASH_FIELD_NUMBER = 4;
       private com.google.protobuf.ByteString refBlockHash_;
       /**
@@ -3811,6 +4139,9 @@ public final class Chain {
         return refBlockHash_;
       }
 
+      /**
+       * 过期域编号
+       */
       public static final int EXPIRATION_FIELD_NUMBER = 8;
       private long expiration_;
       /**
@@ -3822,6 +4153,9 @@ public final class Chain {
         return expiration_;
       }
 
+      /**
+       * 认证域编号
+       */
       public static final int AUTHS_FIELD_NUMBER = 9;
       private java.util.List<org.zlwl.trident.proto.Common.authority> auths_;
       /**
@@ -3862,6 +4196,9 @@ public final class Chain {
         return auths_.get(index);
       }
 
+      /**
+       * 数据字段数
+       */
       public static final int DATA_FIELD_NUMBER = 10;
       private com.google.protobuf.ByteString data_;
       /**
@@ -3877,6 +4214,9 @@ public final class Chain {
         return data_;
       }
 
+      /**
+       * 合约场数量
+       */
       public static final int CONTRACT_FIELD_NUMBER = 11;
       private java.util.List<org.zlwl.trident.proto.Chain.Transaction.Contract> contract_;
       /**
@@ -3937,6 +4277,9 @@ public final class Chain {
         return contract_.get(index);
       }
 
+      /**
+       * 脚本域编号
+       */
       public static final int SCRIPTS_FIELD_NUMBER = 12;
       private com.google.protobuf.ByteString scripts_;
       /**
@@ -3952,6 +4295,9 @@ public final class Chain {
         return scripts_;
       }
 
+      /**
+       * 时间戳字段数
+       */
       public static final int TIMESTAMP_FIELD_NUMBER = 14;
       private long timestamp_;
       /**
@@ -3963,6 +4309,9 @@ public final class Chain {
         return timestamp_;
       }
 
+      /**
+       * 费用限制域编号
+       */
       public static final int FEE_LIMIT_FIELD_NUMBER = 18;
       private long feeLimit_;
       /**
@@ -4146,43 +4495,110 @@ public final class Chain {
         return hash;
       }
 
+      /**
+       * 解析来自
+       *
+       * @param data 数据
+       * @return {@link raw}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data              数据
+       * @param extensionRegistry 扩展注册表
+       * @return {@link raw}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data 数据
+       * @return {@link raw}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data              数据
+       * @param extensionRegistry 扩展注册表
+       * @return {@link raw}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data 数据
+       * @return {@link raw}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param data              数据
+       * @param extensionRegistry 扩展注册表
+       * @return {@link raw}
+       * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input 输入
+       * @return {@link raw}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input             输入
+       * @param extensionRegistry 扩展注册表
+       * @return {@link raw}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4190,11 +4606,28 @@ public final class Chain {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
+
+      /**
+       * 开解析
+       *
+       * @param input 输入
+       * @return {@link raw}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
+
+      /**
+       * 开解析
+       *
+       * @param input             输入
+       * @param extensionRegistry 扩展注册表
+       * @return {@link raw}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4202,12 +4635,29 @@ public final class Chain {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input 输入
+       * @return {@link raw}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
+
+      /**
+       * 解析来自
+       *
+       * @param input             输入
+       * @param extensionRegistry 扩展注册表
+       * @return {@link raw}
+       * @throws java.io.IOException ioexception
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4218,9 +4668,22 @@ public final class Chain {
 
       @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
+
+      /**
+       * 新构建器
+       *
+       * @return {@link Builder}
+       */
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
+
+      /**
+       * 新构建器
+       *
+       * @param prototype 原型
+       * @return {@link Builder}
+       */
       public static Builder newBuilder(org.zlwl.trident.proto.Chain.Transaction.raw prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
@@ -4243,6 +4706,11 @@ public final class Chain {
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:protocol.Transaction.raw)
           org.zlwl.trident.proto.Chain.Transaction.rawOrBuilder {
+        /**
+         * 获取描述符
+         *
+         * @return {@link com.google.protobuf.Descriptors.Descriptor}
+         */
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return org.zlwl.trident.proto.Chain.internal_static_protocol_Transaction_raw_descriptor;
@@ -4683,8 +5151,14 @@ public final class Chain {
             return authsBuilder_.getMessage(index);
           }
         }
+
         /**
+         * 设置身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index 指数
+         * @param value 价值
+         * @return {@link Builder}
          */
         public Builder setAuths(
             int index, org.zlwl.trident.proto.Common.authority value) {
@@ -4700,8 +5174,14 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 设置身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index           指数
+         * @param builderForValue 建筑价值
+         * @return {@link Builder}
          */
         public Builder setAuths(
             int index, org.zlwl.trident.proto.Common.authority.Builder builderForValue) {
@@ -4714,8 +5194,13 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param value 价值
+         * @return {@link Builder}
          */
         public Builder addAuths(org.zlwl.trident.proto.Common.authority value) {
           if (authsBuilder_ == null) {
@@ -4730,8 +5215,14 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index 指数
+         * @param value 价值
+         * @return {@link Builder}
          */
         public Builder addAuths(
             int index, org.zlwl.trident.proto.Common.authority value) {
@@ -4747,8 +5238,13 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param builderForValue 建筑价值
+         * @return {@link Builder}
          */
         public Builder addAuths(
             org.zlwl.trident.proto.Common.authority.Builder builderForValue) {
@@ -4761,8 +5257,14 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index           指数
+         * @param builderForValue 建筑价值
+         * @return {@link Builder}
          */
         public Builder addAuths(
             int index, org.zlwl.trident.proto.Common.authority.Builder builderForValue) {
@@ -4775,8 +5277,13 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加所有身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param values 值
+         * @return {@link Builder}
          */
         public Builder addAllAuths(
             java.lang.Iterable<? extends org.zlwl.trident.proto.Common.authority> values) {
@@ -4790,8 +5297,12 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 明确身份验证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @return {@link Builder}
          */
         public Builder clearAuths() {
           if (authsBuilder_ == null) {
@@ -4803,8 +5314,13 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 删除认证
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index 指数
+         * @return {@link Builder}
          */
         public Builder removeAuths(int index) {
           if (authsBuilder_ == null) {
@@ -4816,15 +5332,25 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 获得身份验证构建器
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index 指数
+         * @return {@link Builder}
          */
         public org.zlwl.trident.proto.Common.authority.Builder getAuthsBuilder(
             int index) {
           return getAuthsFieldBuilder().getBuilder(index);
         }
+
         /**
+         * 身份验证或构建器
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index 指数
+         * @return data
          */
         public org.zlwl.trident.proto.Common.authorityOrBuilder getAuthsOrBuilder(
             int index) {
@@ -4844,23 +5370,36 @@ public final class Chain {
             return java.util.Collections.unmodifiableList(auths_);
           }
         }
+
         /**
+         * 添加身份验证构建器
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @return {@link Builder}
          */
         public org.zlwl.trident.proto.Common.authority.Builder addAuthsBuilder() {
           return getAuthsFieldBuilder().addBuilder(
               org.zlwl.trident.proto.Common.authority.getDefaultInstance());
         }
+
         /**
+         * 添加身份验证构建器
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @param index 指数
+         * @return {@link Builder}
          */
         public org.zlwl.trident.proto.Common.authority.Builder addAuthsBuilder(
             int index) {
           return getAuthsFieldBuilder().addBuilder(
               index, org.zlwl.trident.proto.Common.authority.getDefaultInstance());
         }
+
         /**
+         * 得到身份验证构建器列表
          * <code>repeated .protocol.authority auths = 9;</code>
+         *
+         * @return data
          */
         public java.util.List<org.zlwl.trident.proto.Common.authority.Builder> 
              getAuthsBuilderList() {
@@ -4936,6 +5475,9 @@ public final class Chain {
            }
         }
 
+        /**
+         * 合约构建器
+         */
         private com.google.protobuf.RepeatedFieldBuilderV3<
             org.zlwl.trident.proto.Chain.Transaction.Contract, org.zlwl.trident.proto.Chain.Transaction.Contract.Builder, org.zlwl.trident.proto.Chain.Transaction.ContractOrBuilder> contractBuilder_;
 
@@ -4981,12 +5523,18 @@ public final class Chain {
             return contractBuilder_.getMessage(index);
           }
         }
+
         /**
+         * 集合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index 指数
+         * @param value 价值
+         * @return {@link Builder}
          */
         public Builder setContract(
             int index, org.zlwl.trident.proto.Chain.Transaction.Contract value) {
@@ -5002,12 +5550,18 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 集合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index           指数
+         * @param builderForValue 建筑价值
+         * @return {@link Builder}
          */
         public Builder setContract(
             int index, org.zlwl.trident.proto.Chain.Transaction.Contract.Builder builderForValue) {
@@ -5020,12 +5574,17 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param value 价值
+         * @return {@link Builder}
          */
         public Builder addContract(org.zlwl.trident.proto.Chain.Transaction.Contract value) {
           if (contractBuilder_ == null) {
@@ -5040,12 +5599,18 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index 指数
+         * @param value 价值
+         * @return {@link Builder}
          */
         public Builder addContract(
             int index, org.zlwl.trident.proto.Chain.Transaction.Contract value) {
@@ -5061,12 +5626,17 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param builderForValue 建筑价值
+         * @return {@link Builder}
          */
         public Builder addContract(
             org.zlwl.trident.proto.Chain.Transaction.Contract.Builder builderForValue) {
@@ -5079,12 +5649,18 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index           指数
+         * @param builderForValue 建筑价值
+         * @return {@link Builder}
          */
         public Builder addContract(
             int index, org.zlwl.trident.proto.Chain.Transaction.Contract.Builder builderForValue) {
@@ -5097,12 +5673,17 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 添加所有合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param values 值
+         * @return {@link Builder}
          */
         public Builder addAllContract(
             java.lang.Iterable<? extends org.zlwl.trident.proto.Chain.Transaction.Contract> values) {
@@ -5116,12 +5697,16 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 清晰合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @return {@link Builder}
          */
         public Builder clearContract() {
           if (contractBuilder_ == null) {
@@ -5133,12 +5718,17 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 删除合约
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index 指数
+         * @return {@link Builder}
          */
         public Builder removeContract(int index) {
           if (contractBuilder_ == null) {
@@ -5150,23 +5740,33 @@ public final class Chain {
           }
           return this;
         }
+
         /**
+         * 得到合约构建器
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index 指数
+         * @return {@link Builder}
          */
         public org.zlwl.trident.proto.Chain.Transaction.Contract.Builder getContractBuilder(
             int index) {
           return getContractFieldBuilder().getBuilder(index);
         }
+
         /**
+         * 得到合约或构建器
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index 指数
+         * @return {@link ContractOrBuilder}
          */
         public org.zlwl.trident.proto.Chain.Transaction.ContractOrBuilder getContractOrBuilder(
             int index) {
@@ -5175,12 +5775,16 @@ public final class Chain {
             return contractBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
+         * 得到合约或构建器列表
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @return data
          */
         public java.util.List<? extends org.zlwl.trident.proto.Chain.Transaction.ContractOrBuilder> 
              getContractOrBuilderList() {
@@ -5190,35 +5794,48 @@ public final class Chain {
             return java.util.Collections.unmodifiableList(contract_);
           }
         }
+
         /**
+         * 添加合约构建器
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @return {@link Builder}
          */
         public org.zlwl.trident.proto.Chain.Transaction.Contract.Builder addContractBuilder() {
           return getContractFieldBuilder().addBuilder(
               org.zlwl.trident.proto.Chain.Transaction.Contract.getDefaultInstance());
         }
+
         /**
+         * 添加合约构建器
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @param index 指数
+         * @return {@link Builder}
          */
         public org.zlwl.trident.proto.Chain.Transaction.Contract.Builder addContractBuilder(
             int index) {
           return getContractFieldBuilder().addBuilder(
               index, org.zlwl.trident.proto.Chain.Transaction.Contract.getDefaultInstance());
         }
+
         /**
+         * 得到合约构建器列表
          * <pre>
          * only support size = 1, repeated list here for extension
          * </pre>
          *
          * <code>repeated .protocol.Transaction.Contract contract = 11;</code>
+         *
+         * @return data
          */
         public java.util.List<org.zlwl.trident.proto.Chain.Transaction.Contract.Builder> 
              getContractBuilderList() {
@@ -5368,6 +5985,11 @@ public final class Chain {
         DEFAULT_INSTANCE = new org.zlwl.trident.proto.Chain.Transaction.raw();
       }
 
+      /**
+       * 获取默认实例
+       *
+       * @return {@link raw}
+       */
       public static org.zlwl.trident.proto.Chain.Transaction.raw getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
@@ -5383,6 +6005,11 @@ public final class Chain {
         }
       };
 
+      /**
+       * 解析器
+       *
+       * @return data
+       */
       public static com.google.protobuf.Parser<raw> parser() {
         return PARSER;
       }
@@ -5399,6 +6026,9 @@ public final class Chain {
 
     }
 
+    /**
+     * 元数据数据场数量
+     */
     public static final int RAW_DATA_FIELD_NUMBER = 1;
     private org.zlwl.trident.proto.Chain.Transaction.raw rawData_;
     /**
@@ -5425,6 +6055,9 @@ public final class Chain {
       return getRawData();
     }
 
+    /**
+     * 签名字段数
+     */
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private java.util.List<com.google.protobuf.ByteString> signature_;
     /**
@@ -5464,6 +6097,9 @@ public final class Chain {
       return signature_.get(index);
     }
 
+    /**
+     * ret域编号
+     */
     public static final int RET_FIELD_NUMBER = 5;
     private java.util.List<org.zlwl.trident.proto.Chain.Transaction.Result> ret_;
     /**
@@ -6155,7 +6791,7 @@ public final class Chain {
        * 得到元数据数据或构建器
        * <code>.protocol.Transaction.raw raw_data = 1;</code>
        *
-       * @return {@link rawOrBuilder}
+       * @return data
        */
       public org.zlwl.trident.proto.Chain.Transaction.rawOrBuilder getRawDataOrBuilder() {
         if (rawDataBuilder_ != null) {
@@ -6561,7 +7197,7 @@ public final class Chain {
        * 受潮湿腐烂或构建器列表
        * <code>repeated .protocol.Transaction.Result ret = 5;</code>
        *
-       * @return {@link java.util.List}<{@link ?} {@link extends} {@link ResultOrBuilder}>
+       * @return data
        */
       public java.util.List<? extends org.zlwl.trident.proto.Chain.Transaction.ResultOrBuilder> 
            getRetOrBuilderList() {
@@ -6600,7 +7236,7 @@ public final class Chain {
        * 得到ret生成器列表
        * <code>repeated .protocol.Transaction.Result ret = 5;</code>
        *
-       * @return {@link java.util.List}<{@link Builder}>
+       * @return data
        */
       public java.util.List<org.zlwl.trident.proto.Chain.Transaction.Result.Builder> 
            getRetBuilderList() {
@@ -6975,7 +7611,7 @@ public final class Chain {
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return org.zlwl.trident.proto.Chain.internal_static_protocol_BlockHeader_raw_descriptor;
       }
@@ -7423,9 +8059,22 @@ public final class Chain {
 
       @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
+
+      /**
+       * 新构建器
+       *
+       * @return {@link Builder}
+       */
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
+
+      /**
+       * 新构建器
+       *
+       * @param prototype 原型
+       * @return {@link Builder}
+       */
       public static Builder newBuilder(org.zlwl.trident.proto.Chain.BlockHeader.raw prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
@@ -7926,6 +8575,11 @@ public final class Chain {
         DEFAULT_INSTANCE = new org.zlwl.trident.proto.Chain.BlockHeader.raw();
       }
 
+      /**
+       * 获取默认实例
+       *
+       * @return {@link raw}
+       */
       public static org.zlwl.trident.proto.Chain.BlockHeader.raw getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
@@ -7941,6 +8595,11 @@ public final class Chain {
         }
       };
 
+      /**
+       * 解析器
+       *
+       * @return data
+       */
       public static com.google.protobuf.Parser<raw> parser() {
         return PARSER;
       }
@@ -7957,6 +8616,9 @@ public final class Chain {
 
     }
 
+    /**
+     * 元数据数据场数量
+     */
     public static final int RAW_DATA_FIELD_NUMBER = 1;
     private org.zlwl.trident.proto.Chain.BlockHeader.raw rawData_;
     /**
@@ -8080,43 +8742,110 @@ public final class Chain {
       return hash;
     }
 
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link BlockHeader}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link BlockHeader}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link BlockHeader}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link BlockHeader}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link BlockHeader}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link BlockHeader}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input 输入
+     * @return {@link BlockHeader}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link BlockHeader}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8124,11 +8853,28 @@ public final class Chain {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
+
+    /**
+     * 开解析
+     *
+     * @param input 输入
+     * @return {@link BlockHeader}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
+
+    /**
+     * 开解析
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link BlockHeader}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8136,12 +8882,29 @@ public final class Chain {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input 输入
+     * @return {@link BlockHeader}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link BlockHeader}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Chain.BlockHeader parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8152,9 +8915,22 @@ public final class Chain {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
+
+    /**
+     * 新构建器
+     *
+     * @return {@link Builder}
+     */
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
+    /**
+     * 新构建器
+     *
+     * @param prototype 原型
+     * @return {@link Builder}
+     */
     public static Builder newBuilder(org.zlwl.trident.proto.Chain.BlockHeader prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
@@ -8177,6 +8953,11 @@ public final class Chain {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.BlockHeader)
         org.zlwl.trident.proto.Chain.BlockHeaderOrBuilder {
+      /**
+       * 获取描述符
+       *
+       * @return data
+       */
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return org.zlwl.trident.proto.Chain.internal_static_protocol_BlockHeader_descriptor;
@@ -8376,8 +9157,13 @@ public final class Chain {
 
         return this;
       }
+
       /**
+       * 集元数据数据
        * <code>.protocol.BlockHeader.raw raw_data = 1;</code>
+       *
+       * @param builderForValue 建筑价值
+       * @return {@link Builder}
        */
       public Builder setRawData(
           org.zlwl.trident.proto.Chain.BlockHeader.raw.Builder builderForValue) {
@@ -8750,6 +9536,12 @@ public final class Chain {
         makeExtensionsImmutable();
       }
     }
+
+    /**
+     * 获取描述符
+     *
+     * @return data
+     */
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return org.zlwl.trident.proto.Chain.internal_static_protocol_Block_descriptor;
@@ -8811,6 +9603,9 @@ public final class Chain {
       return transactions_.get(index);
     }
 
+    /**
+     * 块头字段数
+     */
     public static final int BLOCK_HEADER_FIELD_NUMBER = 2;
     private org.zlwl.trident.proto.Chain.BlockHeader blockHeader_;
     /**
@@ -9128,6 +9923,11 @@ public final class Chain {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.Block)
         org.zlwl.trident.proto.Chain.BlockOrBuilder {
+      /**
+       * 获取描述符
+       *
+       * @return data}
+       */
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return org.zlwl.trident.proto.Chain.internal_static_protocol_Block_descriptor;

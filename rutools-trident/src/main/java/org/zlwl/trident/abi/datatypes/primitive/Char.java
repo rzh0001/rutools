@@ -15,8 +15,18 @@ package org.zlwl.trident.abi.datatypes.primitive;
 import org.zlwl.trident.abi.datatypes.Type;
 import org.zlwl.trident.abi.datatypes.Utf8String;
 
+/**
+ * 字符
+ *
+ * @author ruanzh.eth
+ */
 public final class Char extends PrimitiveType<Character> {
 
+    /**
+     * 字符
+     *
+     * @param value 价值
+     */
     public Char(char value) {
         super(value);
     }

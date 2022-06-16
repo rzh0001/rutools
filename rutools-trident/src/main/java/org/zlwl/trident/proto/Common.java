@@ -3,12 +3,28 @@
 
 package org.zlwl.trident.proto;
 
+/**
+ * 常见
+ *
+ * @author ruanzh.eth
+ */
 public final class Common {
   private Common() {}
+
+  /**
+   * 登记所有扩展
+   *
+   * @param registry 注册表
+   */
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
+  /**
+   * 登记所有扩展
+   *
+   * @param registry 注册表
+   */
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
@@ -139,6 +155,9 @@ public final class Common {
      * <code>Contract = 2;</code>
      */
     Contract(2),
+    /**
+     * 未被认可
+     */
     UNRECOGNIZED(-1),
     ;
 
@@ -156,6 +175,11 @@ public final class Common {
     public static final int Contract_VALUE = 2;
 
 
+    /**
+     * 得到数量
+     *
+     * @return int
+     */
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -187,6 +211,11 @@ public final class Common {
       }
     }
 
+    /**
+     * 内部得到价值地图
+     *
+     * @return data
+     */
     public static com.google.protobuf.Internal.EnumLiteMap<AccountType>
         internalGetValueMap() {
       return internalValueMap;
@@ -199,6 +228,11 @@ public final class Common {
             }
           };
 
+    /**
+     * 得到值描述符
+     *
+     * @return data
+     */
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
@@ -207,10 +241,22 @@ public final class Common {
       }
       return getDescriptor().getValues().get(ordinal());
     }
+
+    /**
+     * 获取描述符类型
+     *
+     * @return data
+     */
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
       return getDescriptor();
     }
+
+    /**
+     * 获取描述符
+     *
+     * @return data
+     */
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
       return org.zlwl.trident.proto.Common.getDescriptor().getEnumTypes().get(1);
@@ -218,6 +264,12 @@ public final class Common {
 
     private static final AccountType[] VALUES = values();
 
+    /**
+     * 价值
+     *
+     * @param desc desc
+     * @return {@link AccountType}
+     */
     public static AccountType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -239,6 +291,11 @@ public final class Common {
     // @@protoc_insertion_point(enum_scope:protocol.AccountType)
   }
 
+  /**
+   * 帐户id或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface AccountIdOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.AccountId)
       com.google.protobuf.MessageOrBuilder {
@@ -331,6 +388,12 @@ public final class Common {
         makeExtensionsImmutable();
       }
     }
+
+    /**
+     * 获取描述符
+     *
+     * @return data
+     */
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return org.zlwl.trident.proto.Common.internal_static_protocol_AccountId_descriptor;
@@ -442,43 +505,110 @@ public final class Common {
       return hash;
     }
 
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link AccountId}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link AccountId}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link AccountId}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link AccountId}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link AccountId}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link AccountId}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input 输入
+     * @return {@link AccountId}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link AccountId}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -486,11 +616,28 @@ public final class Common {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
+
+    /**
+     * 开解析
+     *
+     * @param input 输入
+     * @return {@link AccountId}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
+
+    /**
+     * 开解析
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link AccountId}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -498,12 +645,29 @@ public final class Common {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input 输入
+     * @return {@link AccountId}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link AccountId}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.AccountId parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -514,9 +678,22 @@ public final class Common {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
+
+    /**
+     * 新构建器
+     *
+     * @return {@link Builder}
+     */
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
+    /**
+     * 新构建器
+     *
+     * @param prototype 原型
+     * @return {@link Builder}
+     */
     public static Builder newBuilder(org.zlwl.trident.proto.Common.AccountId prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
@@ -539,6 +716,11 @@ public final class Common {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protocol.AccountId)
         org.zlwl.trident.proto.Common.AccountIdOrBuilder {
+      /**
+       * 获取描述符
+       *
+       * @return data
+       */
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return org.zlwl.trident.proto.Common.internal_static_protocol_AccountId_descriptor;
@@ -648,6 +830,12 @@ public final class Common {
         }
       }
 
+      /**
+       * 合并
+       *
+       * @param other 其他
+       * @return {@link Builder}
+       */
       public Builder mergeFrom(org.zlwl.trident.proto.Common.AccountId other) {
         if (other == org.zlwl.trident.proto.Common.AccountId.getDefaultInstance()) return this;
         if (other.getName() != com.google.protobuf.ByteString.EMPTY) {
@@ -805,6 +993,11 @@ public final class Common {
 
   }
 
+  /**
+   * 权威或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface authorityOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.authority)
       com.google.protobuf.MessageOrBuilder {
@@ -913,6 +1106,12 @@ public final class Common {
         makeExtensionsImmutable();
       }
     }
+
+    /**
+     * 获取描述符
+     *
+     * @return data
+     */
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return org.zlwl.trident.proto.Common.internal_static_protocol_authority_descriptor;
@@ -926,6 +1125,9 @@ public final class Common {
               org.zlwl.trident.proto.Common.authority.class, org.zlwl.trident.proto.Common.authority.Builder.class);
     }
 
+    /**
+     * 帐户域编号
+     */
     public static final int ACCOUNT_FIELD_NUMBER = 1;
     private org.zlwl.trident.proto.Common.AccountId account_;
     /**
@@ -952,6 +1154,9 @@ public final class Common {
       return getAccount();
     }
 
+    /**
+     * 许可名称字段数
+     */
     public static final int PERMISSION_NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString permissionName_;
     /**
@@ -1044,43 +1249,110 @@ public final class Common {
       return hash;
     }
 
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link authority}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link authority}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link authority}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link authority}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data 数据
+     * @return {@link authority}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param data              数据
+     * @param extensionRegistry 扩展注册表
+     * @return {@link authority}
+     * @throws com.google.protobuf.InvalidProtocolBufferException 无效协议缓冲异常
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input 输入
+     * @return {@link authority}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link authority}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1088,11 +1360,28 @@ public final class Common {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
+
+    /**
+     * 开解析
+     *
+     * @param input 输入
+     * @return {@link authority}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.authority parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
+
+    /**
+     * 开解析
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link authority}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.authority parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1100,12 +1389,29 @@ public final class Common {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input 输入
+     * @return {@link authority}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
+
+    /**
+     * 解析来自
+     *
+     * @param input             输入
+     * @param extensionRegistry 扩展注册表
+     * @return {@link authority}
+     * @throws java.io.IOException ioexception
+     */
     public static org.zlwl.trident.proto.Common.authority parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1116,9 +1422,22 @@ public final class Common {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
+
+    /**
+     * 新构建器
+     *
+     * @return {@link Builder}
+     */
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
+    /**
+     * 新构建器
+     *
+     * @param prototype 原型
+     * @return {@link Builder}
+     */
     public static Builder newBuilder(org.zlwl.trident.proto.Common.authority prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
@@ -1316,8 +1635,13 @@ public final class Common {
           return accountBuilder_.getMessage();
         }
       }
+
       /**
+       * 设置账户
        * <code>.protocol.AccountId account = 1;</code>
+       *
+       * @param value 价值
+       * @return {@link Builder}
        */
       public Builder setAccount(org.zlwl.trident.proto.Common.AccountId value) {
         if (accountBuilder_ == null) {
@@ -1332,8 +1656,13 @@ public final class Common {
 
         return this;
       }
+
       /**
+       * 设置账户
        * <code>.protocol.AccountId account = 1;</code>
+       *
+       * @param builderForValue 建筑价值
+       * @return {@link Builder}
        */
       public Builder setAccount(
           org.zlwl.trident.proto.Common.AccountId.Builder builderForValue) {
@@ -1500,6 +1829,11 @@ public final class Common {
 
   }
 
+  /**
+   * 键或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface KeyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.Key)
       com.google.protobuf.MessageOrBuilder {
@@ -2063,6 +2397,11 @@ public final class Common {
 
   }
 
+  /**
+   * 许可或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface PermissionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.Permission)
       com.google.protobuf.MessageOrBuilder {
@@ -3555,6 +3894,11 @@ public final class Common {
 
   }
 
+  /**
+   * 聪明合约或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface SmartContractOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.SmartContract)
       com.google.protobuf.MessageOrBuilder {
@@ -8539,6 +8883,11 @@ public final class Common {
 
   }
 
+  /**
+   * 投票或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface VoteOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.Vote)
       com.google.protobuf.MessageOrBuilder {
@@ -9071,6 +9420,11 @@ public final class Common {
       DEFAULT_INSTANCE = new org.zlwl.trident.proto.Common.Vote();
     }
 
+    /**
+     * 获取默认实例
+     *
+     * @return {@link Vote}
+     */
     public static org.zlwl.trident.proto.Common.Vote getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
@@ -9086,6 +9440,11 @@ public final class Common {
       }
     };
 
+    /**
+     * 解析器
+     *
+     * @return data
+     */
     public static com.google.protobuf.Parser<Vote> parser() {
       return PARSER;
     }
@@ -9102,6 +9461,11 @@ public final class Common {
 
   }
 
+  /**
+   * 注意或构建器
+   *
+   * @author ruanzh.eth
+   */
   public interface NoteOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protocol.Note)
       com.google.protobuf.MessageOrBuilder {
@@ -9960,6 +10324,11 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_Note_fieldAccessorTable;
 
+  /**
+   * 获取描述符
+   *
+   * @return data
+   */
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
