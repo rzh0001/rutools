@@ -1,6 +1,5 @@
 package org.zlwl.wallet;
 
-import org.jetbrains.annotations.NotNull;
 import org.web3j.abi.FunctionEncoder;
 import org.web3j.abi.FunctionReturnDecoder;
 import org.web3j.abi.TypeReference;
@@ -178,17 +177,17 @@ public class ERC20TokenTool {
     /**
      * data数据格式：最前边的“0x70a08231000000000000000000000000”是固定的，后边的是钱包地址（不带“0x”前缀）
      */
-    @NotNull
     private static String prepareData(String address) {
 
         return DATA_PREFIX + address.substring(2);
     }
 
     /**
+     * hex2dec
      * 以太坊返回报文转十进制
      *
      * @param value 以太坊返回报文
-     * @return
+     * @return {@link String}
      */
     private static String hex2dec(String value) {
         return new BigInteger(value.substring(2), 16).toString();
